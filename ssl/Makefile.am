@@ -3,7 +3,7 @@ SUBDIRS = record
 lib_LIBRARIES = ssl
 
 $(eval ssl_CFLAGS = $(OPENSSL_CFLAGS))
-ssl_PREREQS = $(OPENSSL_OUTDIR2)/opensslconf.h
+ssl_PREREQS = $(OPENSSL_PREREQS)
 
 ssl_SOURCES = s3_srvr.c s3_clnt.c s3_lib.c s3_enc.c
 ssl_SOURCES += s3_both.c s3_cbc.c s3_msg.c t1_meth.c t1_srvr.c t1_clnt.c

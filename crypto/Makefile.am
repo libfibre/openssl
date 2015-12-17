@@ -13,7 +13,7 @@ lib_LIBRARIES = crypto
 # is being included and parsed.
 $(eval crypto_CFLAGS = $(OPENSSL_CFLAGS))
 $(eval crypto_CFLAGS += -I$(THISDIR)/include -I$(THISDIR)/modes)
-crypto_PREREQS = $(OPENSSL_OUTDIR2)/opensslconf.h
+crypto_PREREQS = $(OPENSSL_PREREQS)
 
 crypto_SOURCES = cryptlib.c mem.c mem_dbg.c cversion.c ex_data.c cpt_err.c
 crypto_SOURCES += ebcdic.c uid.c o_time.c o_str.c o_dir.c thr_id.c lock.c fips_ers.c
