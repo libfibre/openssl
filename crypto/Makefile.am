@@ -11,10 +11,9 @@ lib_LIBRARIES = crypto
 # value of THISDIR (once all the recursive scripted logic has run). Using eval
 # forces crypto_CFLAGS to use the value of THISDIR at the time this Makefile.am
 # is being included and parsed.
-$(eval crypto_CFLAGS = $(OPENSSL_CFLAGS) -I$(OPENSSL_TOP)/include)
+$(eval crypto_CFLAGS = $(OPENSSL_CFLAGS))
 $(eval crypto_CFLAGS += -I$(THISDIR)/include -I$(THISDIR)/modes)
-$(eval crypto_CFLAGS += -I$(OPENSSL_OUTDIR1) -I$(OPENSSL_TOP))
-crypto_PREREQS = $(OPENSSL_TOP)/include/openssl/opensslconf.h
+crypto_PREREQS = $(OPENSSL_OUTDIR2)/opensslconf.h
 
 crypto_SOURCES = cryptlib.c mem.c mem_dbg.c cversion.c ex_data.c cpt_err.c
 crypto_SOURCES += ebcdic.c uid.c o_time.c o_str.c o_dir.c thr_id.c lock.c fips_ers.c

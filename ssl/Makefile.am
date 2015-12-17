@@ -2,11 +2,8 @@ SUBDIRS = record
 
 lib_LIBRARIES = ssl
 
-# TBD: factor out some commonality between ssl_CFLAGS and crypto_CFLAGS, and
-# other stuff
-$(eval ssl_CFLAGS = $(OPENSSL_CFLAGS) -I$(OPENSSL_TOP)/include)
-$(eval ssl_CFLAGS += -I$(OPENSSL_TOP))
-ssl_PREREQS = $(OPENSSL_TOP)/include/openssl/opensslconf.h
+$(eval ssl_CFLAGS = $(OPENSSL_CFLAGS))
+ssl_PREREQS = $(OPENSSL_OUTDIR2)/opensslconf.h
 
 ssl_SOURCES = s3_srvr.c s3_clnt.c s3_lib.c s3_enc.c
 ssl_SOURCES += s3_both.c s3_cbc.c s3_msg.c t1_meth.c t1_srvr.c t1_clnt.c

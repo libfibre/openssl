@@ -1,7 +1,6 @@
 bin_BINARIES = openssl
 
 $(eval openssl_CFLAGS = $(OPENSSL_CFLAGS))
-$(eval openssl_CFLAGS += -I$(OPENSSL_TOP)/include -I$(OPENSSL_TOP))
 
 openssl_SOURCES = openssl.c asn1pars.c ca.c ciphers.c cms.c crl.c crl2p7.c
 openssl_SOURCES += dgst.c dhparam.c dsa.c dsaparam.c ec.c ecparam.c enc.c
